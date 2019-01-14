@@ -38,16 +38,15 @@ public class ParamBandController2 {
     /**
      * curl http://localhost:8080/ParamBand2/test3?user=zhagnsan,18
      */
-    // FIXME isen  为毛不行？
     @RequestMapping("/test3")
     public String test2(User user){
         System.out.println("user=" + user);
         return OK;
     }
 
-    /**
-     * 注入自定义的属性编辑器——方式1
-     */
+//    /**
+//     * 注入自定义的属性编辑器——方式1
+//     */
 //    @InitBinder
 //    public void initBinder(WebDataBinder binder) {
 //        System.out.println("ParamBandController2.initBinder");

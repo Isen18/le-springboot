@@ -54,7 +54,7 @@ public class ParamBandController3 {
     }
 
     /**
-     * curl http://localhost:8080/Param Band3/test5?name=zhangsan
+     * curl http://localhost:8080/ParamBand3/test5
      */
     @RequestMapping("/test5")
     public @ResponseBody Student test5(@RequestBody Student student){

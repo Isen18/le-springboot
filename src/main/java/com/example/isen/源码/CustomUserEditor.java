@@ -21,4 +21,6 @@ public class CustomUserEditor extends PropertyEditorSupport {
             throw new IllegalArgumentException("user param is error");
         }
     }
+
+
 }
