@@ -14,3 +14,7 @@ spring:
       ddl-auto: update
 
 name: isen
+
+mybatis:
+  config-location: classpath:/config/mybatis/mybatis-config.xml
+#  mapper-locations:

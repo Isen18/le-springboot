@@ -1,22 +1,21 @@
 package com.example.isen.controller;
 
-import com.example.isen.config.StudentConfig;
 import com.example.isen.entry.Student;
 import com.example.isen.entry.StudentExample;
 import com.example.isen.mapper.StudentMapper;
 import com.example.isen.mapper.StudentMapperExt;
 import java.util.List;
 import javax.annotation.Resource;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author Isen
  * @date 2018/10/25 16:32
  * @since 1.0
  */
-@Controller
+@RestController
 public class StudentController {
 
     @Resource
@@ -34,9 +33,10 @@ public class StudentController {
 //        Student student = studentMapperExt.selectById(1);
 //        Student student2 = studentMapper.selectByPrimaryKey(1);
 //        System.out.println(studentMapperExt.hashCode() + " " + studentMapper.hashCode() + " " + studentMapper2.hashCode());
+        System.out.println("listStudent");
         StudentExample example = new StudentExample();
         List<Student> students = studentMapperExt.selectByExample(example);
-        System.out.println(students);
+        System.out.println("listStudent end:" + students);
     }
 
 }
