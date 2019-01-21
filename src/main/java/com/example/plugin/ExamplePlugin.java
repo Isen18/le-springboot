@@ -3,6 +3,7 @@ package com.example.plugin;
 import java.sql.Statement;
 import java.util.Properties;
 import org.apache.ibatis.executor.statement.StatementHandler;
+import org.apache.ibatis.mapping.BoundSql;
 import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.plugin.Intercepts;
 import org.apache.ibatis.plugin.Invocation;
@@ -26,6 +27,8 @@ public class ExamplePlugin implements Interceptor {
     public Object intercept(Invocation invocation) throws Throwable {
         //代理对象Plugin中的query方法执行时调用，可以在此处进行拦截处理
         System.out.println(String.format("intercept target=%s, method=%s", invocation.getTarget(), invocation.getMethod()));
+        BoundSql boundSql = ((StatementHandler)invocation.getTarget()).getBoundSql();
+        System.out.println("sql=" + boundSql.getSql());
         return invocation.proceed();
     }
 
