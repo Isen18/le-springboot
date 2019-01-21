@@ -11,30 +11,30 @@
         <!--</property>-->
     <!--</bean>-->
 
-	<!--<mvc:annotation-driven conversion-service="conversionService">-->
+	<!--<mvc:annotation-driven conversion-service="conversionService" />-->
 	<!--<mvc:annotation-driven>-->
         <!--<mvc:argument-resolvers>-->
             <!--<bean class="com.example.isen.源码.FormObjArgumentResolver"/>-->
         <!--</mvc:argument-resolvers>-->
     <!--</mvc:annotation-driven>-->
 
-    <!--<bean id="conversionService"-->
-            <!--class="org.springframework.format.support.FormattingConversionServiceFactoryBean">-->
-        <!--<property name="converters">-->
+    <bean id="conversionService"
+            class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <bean class="com.example.isen.源码.CustomDateConverter"/>
+            </set>
+        </property>
+        <!--<property name="formatters">-->
             <!--<set>-->
-                <!--<bean class="com.example.isen.源码.CustomDateConverter"/>-->
+                <!--<bean class="org.example.MyFormatter"/>-->
+                <!--<bean class="org.example.MyAnnotationFormatterFactory"/>-->
             <!--</set>-->
         <!--</property>-->
-        <!--&lt;!&ndash;<property name="formatters">&ndash;&gt;-->
-            <!--&lt;!&ndash;<set>&ndash;&gt;-->
-                <!--&lt;!&ndash;<bean class="org.example.MyFormatter"/>&ndash;&gt;-->
-                <!--&lt;!&ndash;<bean class="org.example.MyAnnotationFormatterFactory"/>&ndash;&gt;-->
-            <!--&lt;!&ndash;</set>&ndash;&gt;-->
-        <!--&lt;!&ndash;</property>&ndash;&gt;-->
-        <!--&lt;!&ndash;<property name="formatterRegistrars">&ndash;&gt;-->
-            <!--&lt;!&ndash;<set>&ndash;&gt;-->
-                <!--&lt;!&ndash;<bean class="org.example.MyFormatterRegistrar"/>&ndash;&gt;-->
-            <!--&lt;!&ndash;</set>&ndash;&gt;-->
-        <!--&lt;!&ndash;</property>&ndash;&gt;-->
-    <!--</bean>-->
+        <!--<property name="formatterRegistrars">-->
+            <!--<set>-->
+                <!--<bean class="org.example.MyFormatterRegistrar"/>-->
+            <!--</set>-->
+        <!--</property>-->
+    </bean>
 </beans>

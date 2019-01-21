@@ -43,7 +43,7 @@ public class ParamBandController {
 
     /**
      * curl http://localhost:8080/ParamBand/test3?birthday=Sat, 01 May 2018 16:30:00 GMT
-     * curl http://localhost:8080/ParamBand/test3?birthday=2018-01-01
+     * curl http://localhost:8080/ParamBand/test3?birthday=2018-01-01&age=18
      */
     @RequestMapping("/test3")
     public String test3(User user){
